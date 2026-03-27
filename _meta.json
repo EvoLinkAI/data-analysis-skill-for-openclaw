@@ -1,0 +1,8 @@
+{
+  "slug": "data-analysis",
+  "version": "1.0.0",
+  "name": "Data Analysis Assistant",
+  "envVars": ["EVOLINK_API_KEY", "EVOLINK_MODEL"],
+  "binaries": ["curl", "jq", "python3", "file"],
+  "networkAccess": true
+}
