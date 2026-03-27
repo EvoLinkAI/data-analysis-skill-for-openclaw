@@ -1,137 +1,136 @@
-🌐 [English](README.md) | 日本語 | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
+🌐 English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md)
 
-[AUTO-TRANSLATED ja]
 ---
 name: data-analysis
-description: AI-powered data analysis using EvoLink API. Decision-first methodology with statistical rigor. Powered by evolink.ai
+description: EvoLink API を使用したAI駆動のデータ分析。意思決定優先の方法論と統計的厳密性。evolink.ai 提供。
 ---
 
-# Data Analysis Assistant
+# データ分析アシスタント
 
-AI-powered data analysis with decision-first methodology and statistical rigor.
+意思決定優先の方法論と統計的厳密性を備えたAI駆動のデータ分析。
 
-Powered by [Evolink.ai](https://evolink.ai?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
+[Evolink.ai](https://evolink.ai?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) 提供
 
-## When to Use
+## 使用場面
 
-Use this skill when the user needs to:
-- Analyze data from CSV, Excel, JSON files
-- Find patterns, trends, or anomalies
-- Understand metrics and KPIs
-- Test hypotheses or A/B tests
-- Perform cohort or funnel analysis
-- Debug data quality issues
-- Generate insights for decision-making
+ユーザーが以下のことを行う必要がある場合、このスキルを使用してください。
+- CSV、Excel、JSON ファイルからデータを分析する
+- パターン、傾向、または異常を発見する
+- 指標とKPIを理解する
+- 仮説検定またはA/Bテストを実行する
+- コホート分析またはファネル分析を実行する
+- データ品質の問題をデバッグする
+- 意思決定のための洞察を生成する
 
-**Core Principle**: Analysis without a decision is just arithmetic. Always clarify what would change if the analysis shows X vs Y.
+**核心原則**: 意思決定のない分析は単なる計算です。分析がXとYのどちらを示すかによって何が変わるのかを常に明確にしてください。
 
-## Usage
+## 使用方法
 
 ```bash
-{baseDir}/scripts/analyze.sh <file_path> "<analysis_question>"
+{baseDir}/scripts/analyze.sh <ファイルパス> "<分析の質問>"
 ```
 
-## Configuration
+## 設定
 
-| Variable | Default | Required | Description |
+| 変数 | デフォルト | 必須 | 説明 |
 |---|---|---|---|
-| `EVOLINK_API_KEY` | - | Yes | Your EvoLink API key |
-| `EVOLINK_MODEL` | `claude-opus-4-6` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
-| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
+| `EVOLINK_API_KEY` | - | はい | あなたのEvoLink APIキー |
+| `EVOLINK_MODEL` | `claude-opus-4-6` | いいえ | 分析用モデル。[EvoLink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)でサポートされている任意のモデルに切り替えることができます。 |
+| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | いいえ | ローカルファイルアクセスが許可されているディレクトリ |
 
-👉 [Get free API key](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
+👉 [無料APIキーを取得](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
 
-## Example
+## 例
 
 ```bash
-bash scripts/analyze.sh sales_data.csv "What are the top 3 revenue drivers this quarter?"
+bash scripts/analyze.sh sales_data.csv "今四半期の収益上位3つの要因は何ですか？"
 ```
 
-Output:
+出力:
 ```
-📊 Analyzing: sales_data.csv
-❓ Question: What are the top 3 revenue drivers this quarter?
+📊 分析中: sales_data.csv
+❓ 質問: 今四半期の収益上位3つの要因は何ですか？
 
-🔍 Analysis Results:
+🔍 分析結果:
 
-1. **Product Category A** - $2.4M (40% of total)
-   - 15% growth vs last quarter
-   - Driven by enterprise segment
+1. **製品カテゴリA** - 240万ドル (合計の40%)
+   - 前四半期比15%成長
+   - エンタープライズセグメントが牽引
 
-2. **Geographic Expansion** - $1.8M (30% of total)
-   - New markets in APAC region
-   - 3x growth vs last quarter
+2. **地理的拡大** - 180万ドル (合計の30%)
+   - APAC地域の新規市場
+   - 前四半期比3倍成長
 
-3. **Upsell to Existing Customers** - $1.2M (20% of total)
-   - 25% conversion rate on upgrade offers
-   - Average deal size: $50K
+3. **既存顧客へのアップセル** - 120万ドル (合計の20%)
+   - アップグレードオファーのコンバージョン率25%
+   - 平均取引額: 5万ドル
 
-📈 Confidence: High (n=1,247 transactions)
-⚠️  Caveats: Q4 includes holiday seasonality
-💡 Recommendation: Double down on APAC expansion and enterprise upsells
+📈 信頼度: 高 (n=1,247件のトランザクション)
+⚠️ 注意点: 第4四半期にはホリデーシーズンが含まれます
+💡 推奨事項: APAC地域での拡大とエンタープライズ顧客へのアップセルを強化する
 ```
 
-## Methodology
+## 方法論
 
-### 1. Decision First
-- Identify the decision owner and question
-- Clarify what would change based on results
-- Set deadline before computing
+### 1. 意思決定優先
+- 意思決定者と質問を特定する
+- 結果に基づいて何が変わるかを明確にする
+- 計算前に期限を設定する
 
-### 2. Statistical Rigor
-- Check sample size sufficiency
-- Ensure fair comparison groups
-- Account for multiple comparisons
-- Quantify uncertainty (confidence intervals)
-- Verify effect size is meaningful
+### 2. 統計的厳密性
+- サンプルサイズの十分性を確認する
+- 公平な比較グループを確保する
+- 複数の比較を考慮する
+- 不確実性 (信頼区間) を定量化する
+- 効果量が意味のあるものであることを確認する
 
-### 3. Output Standards
-- Lead with insight, not methodology
-- Quantify uncertainty (ranges, not point estimates)
-- State limitations clearly
-- Recommend next steps
+### 3. 出力基準
+- 方法論ではなく、洞察から始める
+- 不確実性を定量化する (点推定ではなく範囲で)
+- 制限事項を明確に述べる
+- 次のステップを推奨する
 
-## Security
+## セキュリティ
 
-**⚠️ Data Transmission Warning**
+**⚠️ データ転送に関する警告**
 
-This skill reads the **entire content** of your data file and sends it to `api.evolink.ai` for analysis. **Do not use this skill on files containing:**
-- API keys, tokens, or credentials
-- Personally Identifiable Information (PII)
-- Confidential business data
-- Any sensitive information you don't want transmitted to an external service
+このスキルは、データファイルの**全コンテンツ**を読み取り、分析のために`api.evolink.ai`に送信します。**以下の情報を含むファイルではこのスキルを使用しないでください。**
+- APIキー、トークン、または認証情報
+- 個人識別情報 (PII)
+- 機密性の高いビジネスデータ
+- 外部サービスに送信したくない機密情報
 
-The script implements security checks (directory constraints, symlink rejection, filename blacklist, size/MIME validation), but **cannot guarantee** that arbitrary data files are free of secrets.
+このスクリプトはセキュリティチェック (ディレクトリ制約、シンボリックリンク拒否、ファイル名ブラックリスト、サイズ/MIME検証) を実装していますが、任意のデータファイルに機密情報が含まれていないことを**保証することはできません**。
 
-**Credentials & Network**
+**認証情報とネットワーク**
 
-Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analysis question are sent to `api.evolink.ai` for processing. EvoLink processes the data and returns analysis results. No data is stored after processing.
+EvoLink APIを呼び出すには`EVOLINK_API_KEY`が必要です。データファイルの内容と分析の質問は、処理のために`api.evolink.ai`に送信されます。EvoLinkはデータを処理し、分析結果を返します。処理後にデータは保存されません。
 
-**File Access**
+**ファイルアクセス**
 
-This skill reads the specified data file (CSV, Excel, JSON) from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). 
+このスキルは、指定されたデータファイル (CSV、Excel、JSON) をローカルファイルシステムから読み取ります。ファイルは`DATA_ANALYSIS_SAFE_DIR` (デフォルト: `$HOME/.openclaw/workspace`) 内にある必要があります。
 
-Security validations:
-- Path resolution via `realpath -e` (requires file to exist, resolves symlinks)
-- Symlink inputs are explicitly rejected
-- Directory constraint with trailing-slash comparison
-- Filename blacklist: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`
-- File size limit: 50MB maximum
-- MIME validation: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted
+セキュリティ検証:
+- `realpath -e`によるパス解決 (ファイルが存在し、シンボリックリンクを解決する必要があります)
+- シンボリックリンクの入力は明示的に拒否されます
+- 末尾のスラッシュ比較によるディレクトリ制約
+- ファイル名ブラックリスト: `.env*`、`*.key`、`*.pem`、`*.p12`、`*.pfx`、`id_rsa*`、`authorized_keys`、`config.json`、`.bash_history`、`.ssh`、`shadow`、`passwd`
+- ファイルサイズ制限: 最大50MB
+- MIME検証: `text/csv`、`text/plain`、`application/json`、`application/vnd.ms-excel`、`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`のみが許可されます
 
-**Network Access**
+**ネットワークアクセス**
 
-- **EvoLink API** (`api.evolink.ai`) - Sends data and receives analysis
+- **EvoLink API** (`api.evolink.ai`) - データの送信と分析結果の受信
 
-All network calls use curl and can be audited in the script source.
+すべてのネットワーク呼び出しはcurlを使用しており、スクリプトソースで監査できます。
 
-**Persistence & Privilege**
+**永続性と権限**
 
-This skill does not modify other skills or system settings. Does not request elevated or persistent permissions.
+このスキルは、他のスキルやシステム設定を変更しません。昇格された永続的な権限を要求しません。
 
-## Links
+## リンク
 
 - [GitHub](https://github.com/EvoLinkAI/data-analysis-skill-for-openclaw)
-- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
-- [Community](https://discord.com/invite/5mGHfA24kn)
-- [Support](mailto:support@evolink.ai)
+- [APIリファレンス](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
+- [コミュニティ](https://discord.com/invite/5mGHfA24kn)
+- [サポート](mailto:support@evolink.ai)

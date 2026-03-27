@@ -1,126 +1,125 @@
-🌐 [English](README.md) | [日本語](README.ja.md) | 한국어 | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
+🌐 English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
 
-[AUTO-TRANSLATED ko]
-# Data Analysis Assistant
+# 데이터 분석 어시스턴트
 
-**AI-powered data analysis using EvoLink API**
+**EvoLink API를 활용한 AI 기반 데이터 분석**
 
-Powered by [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+[Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) 제공
 
-Analyze CSV, Excel, and JSON files with decision-first methodology and statistical rigor.
+결정 우선 방법론과 통계적 엄밀성을 사용하여 CSV, Excel, JSON 파일을 분석합니다.
 
-## 🚀 Quick Start
+## 🚀 빠른 시작
 
 ```bash
-bash scripts/analyze.sh sales_data.csv "What are the top revenue drivers?"
+bash scripts/analyze.sh sales_data.csv "최고 수익 동인은 무엇입니까?"
 ```
 
-## 🔑 Configuration
+## 🔑 설정
 
-Set your API key:
+API 키를 설정하세요:
 
 ```bash
 export EVOLINK_API_KEY="your-key"
 ```
 
-👉 [Get free API key](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+👉 [무료 API 키 받기](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
 
-## 📖 Usage
+## 📖 사용법
 
-### Basic Analysis
+### 기본 분석
 
 ```bash
 bash scripts/analyze.sh <file_path> "<analysis_question>"
 ```
 
-**Supported formats:**
+**지원되는 형식:**
 - CSV (`.csv`)
 - Excel (`.xlsx`, `.xls`)
 - JSON (`.json`)
 
-### Example Questions
+### 질문 예시
 
 ```bash
-# Trend analysis
-bash scripts/analyze.sh sales.csv "What's the monthly revenue trend?"
+# 추세 분석
+bash scripts/analyze.sh sales.csv "월별 수익 추세는 어떻습니까?"
 
-# Comparison
-bash scripts/analyze.sh experiment.csv "Is variant A significantly better than B?"
+# 비교
+bash scripts/analyze.sh experiment.csv "변형 A가 B보다 유의미하게 나은가요?"
 
-# Segmentation
-bash scripts/analyze.sh users.csv "Which user segments have highest retention?"
+# 세분화
+bash scripts/analyze.sh users.csv "어떤 사용자 세그먼트가 가장 높은 유지율을 보입니까?"
 
-# Anomaly detection
-bash scripts/analyze.sh metrics.csv "Are there any unusual patterns in the last 30 days?"
+# 이상 감지
+bash scripts/analyze.analyze.sh metrics.csv "지난 30일 동안 특이한 패턴이 있었습니까?"
 ```
 
-## ⚙️ Configuration
+## ⚙️ 구성
 
-| Variable | Default | Required | Description |
+| 변수 | 기본값 | 필수 | 설명 |
 |---|---|---|---|
-| `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
-| `EVOLINK_MODEL` | `claude-opus-4-6` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
-| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
+| `EVOLINK_API_KEY` | — | 예 | Evolink API 키. [여기서 무료로 받기 →](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_MODEL` | `claude-opus-4-6` | 아니요 | 분석을 위한 모델. [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)에서 지원하는 모든 모델로 전환 가능 |
+| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | 아니요 | 로컬 파일 접근이 허용된 디렉토리 |
 
-Required binaries: `curl`, `jq`, `python3`, `file`.
+필수 바이너리: `curl`, `jq`, `python3`, `file`.
 
-## 🎯 Core Principle
+## 🎯 핵심 원칙
 
-**Analysis without a decision is just arithmetic.**
+**결정 없는 분석은 단순한 계산일 뿐입니다.**
 
-This skill emphasizes:
-- Decision-first methodology
-- Statistical rigor (sample size, confidence intervals, effect size)
-- Clear output standards (insight-first, quantified uncertainty)
-- Explicit limitations and caveats
+이 기술은 다음을 강조합니다:
+- 결정 우선 방법론
+- 통계적 엄밀성 (표본 크기, 신뢰 구간, 효과 크기)
+- 명확한 출력 표준 (통찰력 우선, 정량화된 불확실성)
+- 명시적인 제한 사항 및 주의 사항
 
-## 📊 What It Does
+<h2>📊 작동 방식</h2>
 
-1. **Reads your data file** (CSV/Excel/JSON)
-2. **Sends to EvoLink API** with your analysis question
-3. **Returns structured insights** with:
-   - Key findings
-   - Statistical confidence
-   - Caveats and limitations
-   - Recommended next steps
+1. **데이터 파일 읽기** (CSV/Excel/JSON)
+2. 분석 질문과 함께 **EvoLink API로 전송**
+3. 다음을 포함한 **구조화된 통찰력 반환**:
+   - 주요 발견 사항
+   - 통계적 신뢰도
+   - 주의 사항 및 제한 사항
+   - 권장되는 다음 단계
 
-## 🔒 Security
+## 🔒 보안
 
-**Credentials & Network**
+**자격 증명 및 네트워크**
 
-Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analysis question are sent to `api.evolink.ai` for processing. EvoLink processes the data and returns analysis results. No data is stored after processing.
+EvoLink API를 호출하려면 `EVOLINK_API_KEY`가 필요합니다. 귀하의 데이터 파일 내용과 분석 질문은 처리를 위해 `api.evolink.ai`로 전송됩니다. EvoLink는 데이터를 처리하고 분석 결과를 반환합니다. 처리 후 데이터는 저장되지 않습니다.
 
-**File Access**
+**파일 접근**
 
-Reads the specified data file from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). The script validates file paths and rejects symlinks for security.
+로컬 파일 시스템에서 지정된 데이터 파일을 읽습니다. 파일은 `DATA_ANALYSIS_SAFE_DIR` (기본값: `$HOME/.openclaw/workspace`) 내에 있어야 합니다. 스크립트는 파일 경로를 검증하고 보안을 위해 심볼릭 링크를 거부합니다.
 
-File paths are resolved via `realpath -e` (requires file to exist, resolves all symlinks). Symlink inputs are explicitly rejected.
+파일 경로는 `realpath -e`를 통해 해결됩니다 (파일이 존재해야 하며 모든 심볼릭 링크를 해결합니다). 심볼릭 링크 입력은 명시적으로 거부됩니다。
 
-Sensitive files are blacklisted by name: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
+민감한 파일은 이름으로 블랙리스트에 올라 있습니다: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
 
-**File Size Limit**: 50MB maximum for data files.
+**파일 크기 제한**: 데이터 파일의 최대 50MB.
 
-**MIME Validation**: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted.
+**MIME 유효성 검사**: `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`만 허용됩니다。
 
-**Network Access**
+**네트워크 접근**
 
-- **EvoLink API** (`api.evolink.ai`) - Sends data and receives analysis
+- **EvoLink API** (`api.evolink.ai`) - 데이터 전송 및 분석 수신
 
-All network calls use curl and can be audited in the script source.
+모든 네트워크 호출은 curl을 사용하며 스크립트 소스에서 감사할 수 있습니다。
 
-**Persistence & Privilege**
+**지속성 및 권한**
 
-This skill does not modify other skills or system settings. Does not request elevated or persistent permissions.
+이 기술은 다른 기술이나 시스템 설정을 수정하지 않습니다. 상위 권한 또는 영구적인 권한을 요청하지 않습니다。
 
-## 📄 License
+## 📄 라이선스
 
 MIT
 
-## 🔗 Links
+## 🔗 링크
 
-- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
-- [Community](https://discord.com/invite/5mGHfA24kn)
-- [Support](mailto:support@evolink.ai)
-- [Get API Key](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) — Free signup
+- [API 참조](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+- [커뮤니티](https://discord.com/invite/5mGHfA24kn)
+- [지원](mailto:support@evolink.ai)
+- [API 키 받기](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) — 무료 가입
 
-Powered by [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+[EvoLink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) 제공
