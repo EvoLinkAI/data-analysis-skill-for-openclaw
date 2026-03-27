@@ -7,7 +7,7 @@ set -euo pipefail
 FILE_PATH="${1:-}"
 QUESTION="${2:-}"
 SAFE_DIR="${DATA_ANALYSIS_SAFE_DIR:-$HOME/.openclaw/workspace}"
-MODEL="${EVOLINK_MODEL:-claude-opus-4-6}"
+MODEL="${EVOLINK_MODEL:-[REDACTED]}"
 API_KEY="${EVOLINK_API_KEY:-}"
 
 # Validate inputs
@@ -45,9 +45,20 @@ if [[ "$RESOLVED" != "$SAFE_DIR"* ]]; then
     exit 1
 fi
 
-# Security: Filename blacklist
+# Security: Filename blacklist (improved anchoring)
 BASENAME=$(basename "$RESOLVED")
-if [[ "$BASENAME" =~ ^\.env|\.key$|\.pem$|\.p12$|\.pfx$|^id_rsa|^authorized_keys$|^\.bash_history$|^config\.json$|^\.ssh$|^shadow$|^passwd$ ]]; then
+if [[ "$BASENAME" =~ ^\.env.*$ ]] || \
+   [[ "$BASENAME" =~ \.key$ ]] || \
+   [[ "$BASENAME" =~ \.pem$ ]] || \
+   [[ "$BASENAME" =~ \.p12$ ]] || \
+   [[ "$BASENAME" =~ \.pfx$ ]] || \
+   [[ "$BASENAME" =~ ^id_rsa ]] || \
+   [[ "$BASENAME" == "authorized_keys" ]] || \
+   [[ "$BASENAME" == ".bash_history" ]] || \
+   [[ "$BASENAME" == "config.json" ]] || \
+   [[ "$BASENAME" == ".ssh" ]] || \
+   [[ "$BASENAME" == "shadow" ]] || \
+   [[ "$BASENAME" == "passwd" ]]; then
     echo "Error: This file type is not allowed for security reasons"
     exit 1
 fi
