@@ -51,6 +51,16 @@ bash scripts/analyze.sh users.csv "Which user segments have highest retention?"
 bash scripts/analyze.sh metrics.csv "Are there any unusual patterns in the last 30 days?"
 ```
 
+## ⚙️ Configuration
+
+| Variable | Default | Required | Description |
+|---|---|---|---|
+| `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_MODEL` | `[REDACTED]` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
+| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
+
+Required binaries: `curl`, `jq`, `python3`, `file`.
+
 ## 🎯 Core Principle
 
 **Analysis without a decision is just arithmetic.**
@@ -79,7 +89,15 @@ Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analy
 
 **File Access**
 
-Reads the specified data file from your local filesystem. Files must be within `~/.openclaw/workspace` by default. The script validates file paths and rejects symlinks for security.
+Reads the specified data file from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). The script validates file paths and rejects symlinks for security.
+
+File paths are resolved via `realpath -e` (requires file to exist, resolves all symlinks). Symlink inputs are explicitly rejected.
+
+Sensitive files are blacklisted by name: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
+
+**File Size Limit**: 50MB maximum for data files.
+
+**MIME Validation**: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted.
 
 **Network Access**
 
@@ -100,3 +118,6 @@ MIT
 - [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
 - [Community](https://discord.com/invite/5mGHfA24kn)
 - [Support](mailto:support@evolink.ai)
+- [Get API Key](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) — Free signup
+
+Powered by [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)

@@ -32,10 +32,9 @@ Use this skill when the user needs to:
 
 | Variable | Default | Required | Description |
 |---|---|---|---|
-| `EVOLINK_API_KEY` | - | Yes | Your EvoLink API key |
-| `EVOLINK_MODEL` | `[REDACTED]` | No | Model to use (can switch to sonnet/haiku) |
-
-👉 [Get free API key](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
+| `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_MODEL` | `[REDACTED]` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
+| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
 
 ## Example
 
@@ -95,7 +94,15 @@ Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analy
 
 **File Access**
 
-This skill reads the specified data file (CSV, Excel, JSON) from your local filesystem. Files must be within `~/.openclaw/workspace` by default. The script validates file paths and rejects symlinks.
+This skill reads the specified data file (CSV, Excel, JSON) from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). The script validates file paths and rejects symlinks.
+
+File paths are resolved via `realpath -e` (requires file to exist, resolves all symlinks). Symlink inputs are explicitly rejected.
+
+Sensitive files are blacklisted by name: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
+
+**File Size Limit**: 50MB maximum for data files.
+
+**MIME Validation**: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted.
 
 **Network Access**
 
@@ -109,6 +116,6 @@ This skill does not modify other skills or system settings. Does not request ele
 
 ## Links
 
-- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
 - [Community](https://discord.com/invite/5mGHfA24kn)
 - [Support](mailto:support@evolink.ai)
