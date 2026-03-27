@@ -32,9 +32,11 @@ Use this skill when the user needs to:
 
 | Variable | Default | Required | Description |
 |---|---|---|---|
-| `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_API_KEY` | - | Yes | Your EvoLink API key |
 | `EVOLINK_MODEL` | `claude-opus-4-6` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
 | `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
+
+👉 [Get free API key](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
 
 ## Example
 
@@ -88,21 +90,31 @@ Output:
 
 ## Security
 
+**⚠️ Data Transmission Warning**
+
+This skill reads the **entire content** of your data file and sends it to `api.evolink.ai` for analysis. **Do not use this skill on files containing:**
+- API keys, tokens, or credentials
+- Personally Identifiable Information (PII)
+- Confidential business data
+- Any sensitive information you don't want transmitted to an external service
+
+The script implements security checks (directory constraints, symlink rejection, filename blacklist, size/MIME validation), but **cannot guarantee** that arbitrary data files are free of secrets.
+
 **Credentials & Network**
 
 Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analysis question are sent to `api.evolink.ai` for processing. EvoLink processes the data and returns analysis results. No data is stored after processing.
 
 **File Access**
 
-This skill reads the specified data file (CSV, Excel, JSON) from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). The script validates file paths and rejects symlinks.
+This skill reads the specified data file (CSV, Excel, JSON) from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). 
 
-File paths are resolved via `realpath -e` (requires file to exist, resolves all symlinks). Symlink inputs are explicitly rejected.
-
-Sensitive files are blacklisted by name: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
-
-**File Size Limit**: 50MB maximum for data files.
-
-**MIME Validation**: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted.
+Security validations:
+- Path resolution via `realpath -e` (requires file to exist, resolves symlinks)
+- Symlink inputs are explicitly rejected
+- Directory constraint with trailing-slash comparison
+- Filename blacklist: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`
+- File size limit: 50MB maximum
+- MIME validation: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted
 
 **Network Access**
 
