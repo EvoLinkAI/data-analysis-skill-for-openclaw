@@ -7,7 +7,7 @@ set -euo pipefail
 FILE_PATH="${1:-}"
 QUESTION="${2:-}"
 SAFE_DIR="${DATA_ANALYSIS_SAFE_DIR:-$HOME/.openclaw/workspace}"
-MODEL="${EVOLINK_MODEL:-[REDACTED]}"
+MODEL="${EVOLINK_MODEL:-claude-opus-4-6}"
 API_KEY="${EVOLINK_API_KEY:-}"
 
 # Validate inputs

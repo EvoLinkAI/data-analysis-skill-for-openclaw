@@ -33,7 +33,7 @@ Use this skill when the user needs to:
 | Variable | Default | Required | Description |
 |---|---|---|---|
 | `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
-| `EVOLINK_MODEL` | `[REDACTED]` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_MODEL` | `claude-opus-4-6` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis) |
 | `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
 
 ## Example
