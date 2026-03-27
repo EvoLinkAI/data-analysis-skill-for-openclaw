@@ -1,5 +1,6 @@
-🌐 English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
+🌐 [English](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | Türkçe 
 
+[AUTO-TRANSLATED tr]
 # Data Analysis Assistant
 
 **AI-powered data analysis using EvoLink API**

@@ -1,5 +1,6 @@
-🌐 English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
+🌐 [English](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | Français | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
 
+[AUTO-TRANSLATED fr]
 ---
 name: data-analysis
 description: AI-powered data analysis using EvoLink API. Decision-first methodology with statistical rigor. Powered by evolink.ai
