@@ -1,125 +1,125 @@
 🌐 English | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [हिन्दी](README.hi.md) | [Türkçe](README.tr.md) 
 
-# Data Analysis Assistant
+# Ассистент анализа данных
 
-**AI-powered data analysis using EvoLink API**
+**Анализ данных на основе ИИ с использованием EvoLink API**
 
-Powered by [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+Работает на [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
 
-Analyze CSV, Excel, and JSON files with decision-first methodology and statistical rigor.
+Анализируйте CSV, Excel и JSON файлы с методологией, ориентированной на принятие решений, и статистической строгостью.
 
-## 🚀 Quick Start
+## 🚀 Быстрый старт
 
 ```bash
-bash scripts/analyze.sh sales_data.csv "What are the top revenue drivers?"
+bash scripts/analyze.sh sales_data.csv "Каковы основные драйверы дохода?"
 ```
 
-## 🔑 Configuration
+## 🔑 Конфигурация
 
-Set your API key:
+Установите ваш API ключ:
 
 ```bash
 export EVOLINK_API_KEY="your-key"
 ```
 
-👉 [Get free API key](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+👉 [Получить бесплатный API ключ](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
 
-## 📖 Usage
+## 📖 Использование
 
-### Basic Analysis
+### Базовый анализ
 
 ```bash
-bash scripts/analyze.sh <file_path> "<analysis_question>"
+bash scripts/analyze.sh <путь_к_файлу> "<вопрос_для_анализа>"
 ```
 
-**Supported formats:**
+**Поддерживаемые форматы:**
 - CSV (`.csv`)
 - Excel (`.xlsx`, `.xls`)
 - JSON (`.json`)
 
-### Example Questions
+### Примеры вопросов
 
 ```bash
-# Trend analysis
-bash scripts/analyze.sh sales.csv "What's the monthly revenue trend?"
+# Анализ трендов
+bash scripts/analyze.sh sales.csv "Какова тенденция месячного дохода?"
 
-# Comparison
-bash scripts/analyze.sh experiment.csv "Is variant A significantly better than B?"
+# Сравнение
+bash scripts/analyze.sh experiment.csv "Вариант A значительно лучше варианта B?"
 
-# Segmentation
-bash scripts/analyze.sh users.csv "Which user segments have highest retention?"
+# Сегментация
+bash scripts/analyze.sh users.csv "Какие сегменты пользователей имеют наивысшую удержание?"
 
-# Anomaly detection
-bash scripts/analyze.sh metrics.csv "Are there any unusual patterns in the last 30 days?"
+# Обнаружение аномалий
+bash scripts/analyze.sh metrics.csv "Есть ли необычные паттерны за последние 30 дней?"
 ```
 
-## ⚙️ Configuration
+## ⚙️ Конфигурация
 
-| Variable | Default | Required | Description |
+| Переменная | По умолчанию | Обязательно | Описание |
 |---|---|---|---|
-| `EVOLINK_API_KEY` | — | Yes | Your Evolink API key. [Get one free →](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
-| `EVOLINK_MODEL` | `claude-opus-4-6` | No | Model for analysis. Switch to any model supported by the [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
-| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | No | Allowed directory for local file access |
+| `EVOLINK_API_KEY` | — | Да | Ваш API ключ Evolink. [Получить бесплатно →](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
+| `EVOLINK_MODEL` | `[REDACTED]` | Нет | Модель для анализа. Переключитесь на любую модель, поддерживаемую [Evolink API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) |
+| `DATA_ANALYSIS_SAFE_DIR` | `$HOME/.openclaw/workspace` | Нет | Разрешенная директория для доступа к локальным файлам |
 
-Required binaries: `curl`, `jq`, `python3`, `file`.
+Требуемые бинарные файлы: `curl`, `jq`, `python3`, `file`.
 
-## 🎯 Core Principle
+## 🎯 Основной принцип
 
-**Analysis without a decision is just arithmetic.**
+**Анализ без решения — это просто арифметика.**
 
-This skill emphasizes:
-- Decision-first methodology
-- Statistical rigor (sample size, confidence intervals, effect size)
-- Clear output standards (insight-first, quantified uncertainty)
-- Explicit limitations and caveats
+Этот навык подчеркивает:
+- Методологию, ориентированную на решения
+- Статистическую строгость (размер выборки, доверительные интервалы, размер эффекта)
+- Четкие стандарты вывода (сначала инсайты, количественная неопределенность)
+- Явные ограничения и оговорки
 
-## 📊 What It Does
+## 📊 Что он делает
 
-1. **Reads your data file** (CSV/Excel/JSON)
-2. **Sends to EvoLink API** with your analysis question
-3. **Returns structured insights** with:
-   - Key findings
-   - Statistical confidence
-   - Caveats and limitations
-   - Recommended next steps
+1. **Читает ваш файл данных** (CSV/Excel/JSON)
+2. **Отправляет в EvoLink API** с вашим вопросом для анализа
+3. **Возвращает структурированные инсайты** с:
+   - Ключевыми выводами
+   - Статистической уверенностью
+   - Оговорками и ограничениями
+   - Рекомендуемыми следующими шагами
 
-## 🔒 Security
+## 🔒 Безопасность
 
-**Credentials & Network**
+**Учетные данные и сеть**
 
-Requires `EVOLINK_API_KEY` to call EvoLink API. Your data file content and analysis question are sent to `api.evolink.ai` for processing. EvoLink processes the data and returns analysis results. No data is stored after processing.
+Требуется `EVOLINK_API_KEY` для вызова EvoLink API. Содержимое вашего файла данных и вопрос для анализа отправляются на `api.evolink.ai` для обработки. EvoLink обрабатывает данные и возвращает результаты анализа. Данные не хранятся после обработки.
 
-**File Access**
+**Доступ к файлам**
 
-Reads the specified data file from your local filesystem. Files must be within `DATA_ANALYSIS_SAFE_DIR` (default: `$HOME/.openclaw/workspace`). The script validates file paths and rejects symlinks for security.
+Читает указанный файл данных из вашей локальной файловой системы. Файлы должны находиться в `DATA_ANALYSIS_SAFE_DIR` (по умолчанию: `$HOME/.openclaw/workspace`). Скрипт проверяет пути к файлам и отклоняет символические ссылки для безопасности.
 
-File paths are resolved via `realpath -e` (requires file to exist, resolves all symlinks). Symlink inputs are explicitly rejected.
+Пути к файлам разрешаются через `realpath -e` (требует существования файла, разрешает все символические ссылки). Входные символические ссылки явно отклоняются.
 
-Sensitive files are blacklisted by name: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
+Чувствительные файлы занесены в черный список по имени: `.env*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `id_rsa*`, `authorized_keys`, `config.json`, `.bash_history`, `.ssh`, `shadow`, `passwd`.
 
-**File Size Limit**: 50MB maximum for data files.
+**Ограничение размера файла**: максимум 50 МБ для файлов данных.
 
-**MIME Validation**: Only `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` accepted.
+**Проверка MIME**: принимаются только `text/csv`, `text/plain`, `application/json`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`.
 
-**Network Access**
+**Сетевой доступ**
 
-- **EvoLink API** (`api.evolink.ai`) - Sends data and receives analysis
+- **EvoLink API** (`api.evolink.ai`) - Отправляет данные и получает анализ
 
-All network calls use curl and can be audited in the script source.
+Все сетевые вызовы используют curl и могут быть проверены в исходном коде скрипта.
 
-**Persistence & Privilege**
+**Постоянство и привилегии**
 
-This skill does not modify other skills or system settings. Does not request elevated or persistent permissions.
+Этот навык не изменяет другие навыки или системные настройки. Не запрашивает повышенные или постоянные разрешения.
 
-## 📄 License
+## 📄 Лицензия
 
 MIT
 
-## 🔗 Links
+## 🔗 Ссылки
 
-- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
-- [Community](https://discord.com/invite/5mGHfA24kn)
-- [Support](mailto:support@evolink.ai)
-- [Get API Key](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) — Free signup
+- [Справочник API](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+- [Сообщество](https://discord.com/invite/5mGHfA24kn)
+- [Поддержка](mailto:support@evolink.ai)
+- [Получить API ключ](https://evolink.ai/signup?utm_source=github&utm_medium=skill&utm_campaign=data-analysis) — Бесплатная регистрация
 
-Powered by [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
+Работает на [Evolink.ai](https://evolink.ai?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
