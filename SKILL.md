@@ -109,7 +109,6 @@ This skill does not modify other skills or system settings. Does not request ele
 
 ## Links
 
-- [ClawHub](https://clawhub.ai/evolinkai/data-analysis)
-- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=clawhub&utm_medium=skill&utm_campaign=data-analysis)
+- [API Reference](https://docs.evolink.ai/en/api-manual/language-series/claude/claude-messages-api?utm_source=github&utm_medium=skill&utm_campaign=data-analysis)
 - [Community](https://discord.com/invite/5mGHfA24kn)
 - [Support](mailto:support@evolink.ai)
